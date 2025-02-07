@@ -27,17 +27,6 @@
 			new /obj/effect/temp_visual/mook_dust/robot/table(get_turf(src))
 			playsound(src, 'modular_skyrat/master_files/sound/effects/robot_bump.ogg', 50, TRUE)
 
-		for(var/obj/item/gen_item in sit_pos.contents)
-			if(!gen_item.anchored)
-				items_to_move += gen_item
-				if(items_to_move.len >= 8)
-					break
-
-		for(var/obj/item/table_contents in items_to_move)
-
-			table_contents.throw_at(get_ranged_target_turf(table_contents, pick(GLOB.cardinals), range = 1), range = 1, speed = 1)
-
-
 /mob/living/silicon/robot/on_standing_up()
 	if(layer == LYING_MOB_LAYER)
 		layer = initial(layer)
