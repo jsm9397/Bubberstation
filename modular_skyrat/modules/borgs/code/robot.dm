@@ -27,8 +27,6 @@
 			new /obj/effect/temp_visual/mook_dust/robot/table(get_turf(src))
 			playsound(src, 'modular_skyrat/master_files/sound/effects/robot_bump.ogg', 50, TRUE)
 
-		var/list/items_to_move = list()
-
 		for(var/obj/item/gen_item in sit_pos.contents)
 			if(!gen_item.anchored)
 				items_to_move += gen_item
